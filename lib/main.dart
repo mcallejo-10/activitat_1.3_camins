@@ -10,6 +10,9 @@ class CaminsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: TrailDetailScreen());
+    return MaterialApp(
+      home: const TrailDetailScreen(),
+      theme: ThemeData(fontFamily: 'Roboto'),
+    );
   }
 }

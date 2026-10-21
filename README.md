@@ -1,3 +1,3 @@
-# camins
+# Camins
 
-A new Flutter project.
+Creació de la pantalla principal d'una app de rutes de muntanya seguint un disseny establert.

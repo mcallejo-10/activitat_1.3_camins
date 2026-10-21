@@ -11,4 +11,36 @@ class AppStyles {
   static final Widget smallSeparator = SizedBox(width: 8, height: 8);
   static final Widget mediumSeparator = SizedBox(width: 16, height: 16);
   static final Widget bigSeparator = SizedBox(width: 24, height: 24);
+
+  static final TextStyle textStyleTitle = TextStyle(
+    fontSize: 26,
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+  );
+  static final TextStyle textStyleSectionTitle = TextStyle(
+    fontSize: 19,
+    fontWeight: FontWeight.bold,
+    color: darkText,
+  );
+  static final TextStyle textStyleBody = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.normal,
+    color: greyText,
+    height: 1.5,
+  );
+  static final TextStyle textStyleWhiteBold = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+  );
+  static final TextStyle textStyleChip = TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+  );
+  static final TextStyle textStyleLabel = TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+  );
 }
