@@ -6,6 +6,15 @@ import 'package:flutter/material.dart';
 class TrailDetailScreen extends StatelessWidget {
   const TrailDetailScreen({super.key});
 
+  static const List<String> photos = [
+    'assets/images/lake.jpg',
+    'assets/images/peaks.jpg',
+    'assets/images/forest.jpg',
+    'assets/images/meadow.jpg',
+    'assets/images/waterfall.jpg',
+    'assets/images/sunset.jpg',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,9 +90,7 @@ class TrailDetailScreen extends StatelessWidget {
                 ),
               ],
             ),
-            // Aquí aniran les zones, de dalt a baix
             AppStyles.smallSeparator,
-
             Padding(padding: const EdgeInsets.all(20.0), child: DataCard()),
             Padding(
               padding: const EdgeInsets.all(20.0),
@@ -106,6 +113,41 @@ class TrailDetailScreen extends StatelessWidget {
                       TagChip(icon: Icons.water_drop, label: 'Font d\'aigua'),
                       TagChip(icon: Icons.cabin, label: 'Refugi'),
                     ],
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Fotos', style: AppStyles.textStyleSectionTitle),
+                      Text('Veure-les totes', style: AppStyles.textStyleTag),
+                    ],
+                  ),
+                  GridView.builder(
+                    shrinkWrap: true,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 0,
+                      vertical: 8,
+                    ),
+                    physics: NeverScrollableScrollPhysics(),
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      crossAxisSpacing: 8,
+                      mainAxisSpacing: 8,
+                    ),
+                    itemCount: photos.length,
+                    itemBuilder: (context, index) {
+                      return ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.asset(photos[index], fit: BoxFit.cover),
+                      );
+                    },
                   ),
                 ],
               ),
