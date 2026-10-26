@@ -1,4 +1,6 @@
 import 'package:camins/styles/app_styles.dart';
+import 'package:camins/widgets/data_card.dart';
+import 'package:camins/widgets/tag_chip.dart';
 import 'package:flutter/material.dart';
 
 class TrailDetailScreen extends StatelessWidget {
@@ -80,6 +82,40 @@ class TrailDetailScreen extends StatelessWidget {
               ],
             ),
             // Aquí aniran les zones, de dalt a baix
+            AppStyles.smallSeparator,
+
+            Padding(padding: const EdgeInsets.all(20.0), child: DataCard()),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Sobre la ruta', style: AppStyles.textStyleSectionTitle),
+                  AppStyles.smallSeparator,
+                  Text(
+                    'Una volta circular pel cor del circ de Colomers, amb una desena d\'estanys d\'origen glacial. El camí està ben senyalitzat i la pujada es constant però sense trams tècnics. Ideal per a finals de primavera i estiu.',
+                  ),
+                  AppStyles.bigSeparator,
+                  Row(
+                    children: [
+                      TagChip(icon: Icons.loop, label: 'circular'),
+                      SizedBox(width: 8),
+                      TagChip(icon: Icons.water, label: 'Estanys'),
+                      SizedBox(width: 8),
+                      TagChip(icon: Icons.pets, label: 'Gossos permesos'),
+                    ],
+                  ),
+                  AppStyles.mediumSeparator,
+                  Row(
+                    children: [
+                      TagChip(icon: Icons.water_drop, label: 'Font d\'aigua'),
+                      SizedBox(width: 8),
+                      TagChip(icon: Icons.cabin, label: 'Refugi'),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

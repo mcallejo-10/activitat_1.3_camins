@@ -11,6 +11,11 @@ class AppStyles {
   static final Widget smallSeparator = SizedBox(width: 8, height: 8);
   static final Widget mediumSeparator = SizedBox(width: 16, height: 16);
   static final Widget bigSeparator = SizedBox(width: 24, height: 24);
+  static final Widget verticalLineSeparator = Container(
+    width: 0.5,
+    height: 48,
+    color: AppStyles.greyText,
+  );
 
   static final TextStyle textStyleTitle = TextStyle(
     fontSize: 26,
@@ -42,5 +47,31 @@ class AppStyles {
     fontSize: 13,
     fontWeight: FontWeight.bold,
     color: Colors.white,
+  );
+  static final TextStyle textStyleCardTitle = TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeight.bold,
+    color: AppStyles.darkText,
+  );
+  static final TextStyle textStyleCardSubtitle = TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.normal,
+    color: AppStyles.greyText,
+  );
+
+  static final IconThemeData iconStyleCardIcon = IconThemeData(
+    size: 16,
+    color: AppStyles.green,
+  );
+
+  static final IconThemeData iconStyleTagIcon = IconThemeData(
+    size: 12,
+    color: AppStyles.green,
+  );
+
+  static final TextStyle textStyleTag = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.bold,
+    color: AppStyles.green,
   );
 }
