@@ -1,5 +1,6 @@
 import 'package:camins/styles/app_styles.dart';
 import 'package:camins/widgets/data_card.dart';
+import 'package:camins/widgets/stage_row.dart';
 import 'package:camins/widgets/tag_chip.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,34 @@ class TrailDetailScreen extends StatelessWidget {
     'assets/images/meadow.jpg',
     'assets/images/waterfall.jpg',
     'assets/images/sunset.jpg',
+  ];
+
+  static const List<_TrailStage> stages = [
+    _TrailStage(
+      name: 'Banys de Tredòs',
+      details: 'Sortida · 1.750 m',
+      time: '0:00',
+    ),
+    _TrailStage(
+      name: 'Refugi de Colomers',
+      details: '3,1 km · 2.135 m',
+      time: '1:10',
+    ),
+    _TrailStage(
+      name: 'Estany Major',
+      details: '4,6 km · 2.180 m',
+      time: '1:45',
+    ),
+    _TrailStage(
+      name: 'Estany Obago',
+      details: '6,2 km · 2.240 m',
+      time: '2:30',
+    ),
+    _TrailStage(
+      name: 'Tornada als Banys',
+      details: '9,4 km · 1.750 m',
+      time: '3:45',
+    ),
   ];
 
   @override
@@ -142,12 +171,31 @@ class TrailDetailScreen extends StatelessWidget {
                       mainAxisSpacing: 8,
                     ),
                     itemCount: photos.length,
-                    itemBuilder: (context, index) {
+                    itemBuilder: (cozntext, index) {
                       return ClipRRect(
                         borderRadius: BorderRadius.circular(8),
                         child: Image.asset(photos[index], fit: BoxFit.cover),
                       );
                     },
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Etapes', style: AppStyles.textStyleSectionTitle),
+                  AppStyles.smallSeparator,
+                  ...List.generate(
+                    stages.length,
+                    (index) => StageRow(
+                      number: index + 1,
+                      name: stages[index].name,
+                      details: stages[index].details,
+                      time: stages[index].time,
+                    ),
                   ),
                 ],
               ),
@@ -225,4 +273,16 @@ class TrailDetailScreen extends StatelessWidget {
       ), // bottomNavigationBar: aquí anirà la barra inferior
     );
   }
+}
+
+class _TrailStage {
+  const _TrailStage({
+    required this.name,
+    required this.details,
+    required this.time,
+  });
+
+  final String name;
+  final String details;
+  final String time;
 }
