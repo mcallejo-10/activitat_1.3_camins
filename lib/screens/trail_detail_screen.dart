@@ -96,21 +96,19 @@ class TrailDetailScreen extends StatelessWidget {
                     'Una volta circular pel cor del circ de Colomers, amb una desena d\'estanys d\'origen glacial. El camí està ben senyalitzat i la pujada es constant però sense trams tècnics. Ideal per a finals de primavera i estiu.',
                   ),
                   AppStyles.bigSeparator,
-                  Row(
+                  Wrap(
+                    spacing: 8,
+                    runSpacing: 8,
                     children: [
-                      TagChip(icon: Icons.loop, label: 'circular'),
-                      SizedBox(width: 8),
+                      TagChip(icon: Icons.loop, label: 'Circular'),
                       TagChip(icon: Icons.water, label: 'Estanys'),
-                      SizedBox(width: 8),
                       TagChip(icon: Icons.pets, label: 'Gossos permesos'),
+                      TagChip(icon: Icons.water_drop, label: 'Font d\'aigua'),
+                      TagChip(icon: Icons.cabin, label: 'Refugi'),
                     ],
                   ),
                   AppStyles.mediumSeparator,
-                  Row(
-                    children: [
-                      TagChip(icon: Icons.water_drop, label: 'Font d\'aigua'),
-                      SizedBox(width: 8),
-                      TagChip(icon: Icons.cabin, label: 'Refugi'),
+                  Row(children: [
                     ],
                   ),
                 ],

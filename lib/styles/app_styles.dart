@@ -65,12 +65,12 @@ class AppStyles {
   );
 
   static final IconThemeData iconStyleTagIcon = IconThemeData(
-    size: 12,
+    size: 13,
     color: AppStyles.green,
   );
 
   static final TextStyle textStyleTag = TextStyle(
-    fontSize: 12,
+    fontSize: 13,
     fontWeight: FontWeight.bold,
     color: AppStyles.green,
   );

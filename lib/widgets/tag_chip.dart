@@ -10,7 +10,7 @@ class TagChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
       decoration: BoxDecoration(
         color: AppStyles.lightGreen,
         borderRadius: BorderRadius.circular(20),
@@ -23,6 +23,7 @@ class TagChip extends StatelessWidget {
             color: AppStyles.iconStyleTagIcon.color,
             size: AppStyles.iconStyleTagIcon.size,
           ),
+          SizedBox(width: 8),
           Text(label, style: AppStyles.textStyleTag),
         ],
       ),
