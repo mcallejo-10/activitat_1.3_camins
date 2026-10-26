@@ -107,17 +107,80 @@ class TrailDetailScreen extends StatelessWidget {
                       TagChip(icon: Icons.cabin, label: 'Refugi'),
                     ],
                   ),
-                  AppStyles.mediumSeparator,
-                  Row(children: [
-                    ],
-                  ),
                 ],
               ),
             ),
           ],
         ),
       ),
-      // bottomNavigationBar: aquí anirà la barra inferior
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.zero,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: AppStyles.shadowColor,
+              blurRadius: 12,
+              offset: const Offset(0, -3),
+            ),
+          ],
+        ),
+        child: SafeArea(
+          top: false,
+          minimum: const EdgeInsets.only(
+            left: 20,
+            right: 20,
+            bottom: 0,
+            top: 8,
+          ),
+          maintainBottomViewPadding: false,
+          child: Row(
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(0.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Punt de partida',
+                        style: AppStyles.textStyleCardSubtitle,
+                      ),
+                      AppStyles.tinySeparator,
+                      Text(
+                        'Banys de tredòs',
+                        style: AppStyles.textStyleCardTitle,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 8),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.grey),
+                ),
+                child: IconTheme(
+                  data: AppStyles.iconStyleDownloadButtonIcon,
+                  child: IconButton(
+                    onPressed: () {},
+                    tooltip: 'Desar ruta',
+                    icon: const Icon(Icons.download),
+                  ),
+                ),
+              ),
+              FilledButton.icon(
+                style: AppStyles.filledButtonStyle,
+                onPressed: () {},
+                icon: const Icon(Icons.navigation),
+                label: const Text('Començar'),
+              ),
+            ],
+          ),
+        ),
+      ), // bottomNavigationBar: aquí anirà la barra inferior
     );
   }
 }

@@ -7,6 +7,7 @@ class AppStyles {
   static final Color darkText = Color(0xFF1F2A2E);
   static final Color greyText = Color(0xFF6B7A80);
   static final Color background = Color(0xFFF6F8F7);
+  static final Color shadowColor = Color(0x14000000);
   static final Widget tinySeparator = SizedBox(width: 4, height: 4);
   static final Widget smallSeparator = SizedBox(width: 8, height: 8);
   static final Widget mediumSeparator = SizedBox(width: 16, height: 16);
@@ -69,9 +70,23 @@ class AppStyles {
     color: AppStyles.green,
   );
 
+  static final IconThemeData iconStyleDownloadButtonIcon = IconThemeData(
+    size: 20,
+    color: AppStyles.darkText,
+  );
+
   static final TextStyle textStyleTag = TextStyle(
     fontSize: 13,
     fontWeight: FontWeight.bold,
     color: AppStyles.green,
+  );
+
+  static final ButtonStyle filledButtonStyle = ButtonStyle(
+    backgroundColor: .all(AppStyles.green),
+    foregroundColor: .all(Colors.white),
+    padding: .all(const EdgeInsets.symmetric(horizontal: 16, vertical: 10)),
+    shape: .all(
+      RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+    ),
   );
 }
